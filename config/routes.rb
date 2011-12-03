@@ -1,4 +1,12 @@
 Medecinquebec::Application.routes.draw do
+  get "menus/home"
+
+  get "menus/contact"
+
+  get "menus/about"
+
+  get "menus/help"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

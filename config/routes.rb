@@ -7,6 +7,8 @@ Medecinquebec::Application.routes.draw do
 
   get "menus/help"
 
+root :to => "menus#home"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

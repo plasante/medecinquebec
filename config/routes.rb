@@ -1,4 +1,6 @@
 Medecinquebec::Application.routes.draw do
+  resources :posts
+
   get "menus/home"
 
   get "menus/contact"

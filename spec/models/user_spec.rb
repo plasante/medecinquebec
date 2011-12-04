@@ -17,7 +17,11 @@ describe User do
   
   # This is to create a new @attr object before each example
   before(:each) do
-    @attr = {:first_name => "Pierre", :last_name => "Lasante", :email => "plasante@email.com"}
+    @attr = {:first_name            => "Pierre", 
+             :last_name             => "Lasante", 
+             :email                 => "plasante@email.com",
+             :password              => "foobar",
+             :password_confirmation => "foobar"}
   end
   
   it "should create a new instance given valid attributes" do

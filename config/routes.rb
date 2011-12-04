@@ -1,13 +1,11 @@
 Medecinquebec::Application.routes.draw do
+  resources :users
   resources :posts
 
-  get "menus/home"
-
-  get "menus/contact"
-
-  get "menus/about"
-
-  get "menus/help"
+  match '/contact', :to => 'menus#contact'
+  match '/about'  , :to => 'menus#about'
+  match '/help'   , :to => 'menus#help'
+  match '/signup' , :to => 'users#new'
 
 root :to => "menus#home"
 

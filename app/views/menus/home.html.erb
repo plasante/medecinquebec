@@ -1,4 +1,18 @@
-<h1>Home</h1>
-<p>
-	This is the home page for the <%= link_to 'Medecin Quebec', root_path %> application.
-</p>
+<div data-role="header">
+	<h1>Home</h1>
+</div>
+
+<div data-role="content">
+	<ul data-role="listview">
+		<li><%= link_to "Home"      , root_path    %></li>
+		<li><%= link_to "Contact us", contact_path %></li>
+		<li><%= link_to "About us"  , about_path   %></li>
+		<li><%= link_to "Help"      , help_path    %></li>
+		<li><%= link_to "Sign in"   , '#'          %></li>
+		<li><%= link_to "Sign up"   , signup_path  %></li>
+	</ul>
+</div>
+
+<div data-role="footer">
+	<h3><%= link_to "Home", root_path %></h3>
+</div>

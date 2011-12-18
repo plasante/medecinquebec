@@ -29,5 +29,17 @@ describe UsersController do
       get :show, :id => @user
       assigns(:user).should == @user
     end
+    
+    it "should have the right title" do
+      
+    end
+    
+    it "should include the user's name" do
+      
+    end
+    
+    it "should have an image" do
+      
+    end
   end
 end

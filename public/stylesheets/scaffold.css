@@ -30,6 +30,10 @@ div.field, div.actions {
   display: table;
 }
 
+.field_with_errors label {
+	color: #fff;
+}
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -50,7 +54,24 @@ div.field, div.actions {
   color: #fff;
 }
 
+#error_explanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px;
+}
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+.success {
+    background: none repeat scroll 0 0 #E6EFC2;
+    border-color: #C6D880;
+    color: #264409;
+}
+
+.error, .alert {
+    background: none repeat scroll 0 0 #FBE3E4;
+    border-color: #FBC2C4;
+    color: #8A1F11;
 }

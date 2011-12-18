@@ -39,7 +39,61 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("h1", :content => @user.last_name)
     end
+
+  end
+  
+  describe "POST :create" do
+    describe "failure" do
+      before(:each) do
+        @attr = { :first_name            => "",
+                  :last_name             => "",
+                  :email                 => "",
+                  :password              => "",
+                  :password_confirmation => ""}
+      end
+      
+      it "should not create a user" do
+        lambda do
+          post :create, :user => @attr
+        end.should_not change(User, :count)
+      end
+      
+      it "should have the right title" do
+        post :create, :user => @attr
+        response.should have_selector("title", :content => "Sign up")
+      end
+      
+      it "should render the :new page" do
+        post :create, :user => @attr
+        response.should render_template('new')
+      end
+      
+    end
     
-    it "should have an image"
+    describe "success" do
+      before(:each) do
+        @attr = { :first_name            => "Pierre",
+                  :last_name             => "Lasante",
+                  :email                 => "plasante@email.com",
+                  :password              => "123456",
+                  :password_confirmation => "123456"}
+      end
+      
+      it "should create a user" do
+        lambda do
+          post :create, :user => @attr
+        end.should change(User, :count).by(1)
+      end
+      
+      it "should redirect to the user show page" do
+        post :create, :user => @attr
+        response.should redirect_to(user_path(assigns(:user)))
+      end
+      
+      it "should have a welcome message" do
+        post :create, :user => @attr
+        flash[:success].should =~ /welcome/i
+      end
+    end
   end
 end

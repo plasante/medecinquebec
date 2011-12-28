@@ -8,8 +8,12 @@
 		<li><%= link_to "Contact us", contact_path %></li>
 		<li><%= link_to "About us"  , about_path   %></li>
 		<li><%= link_to "Help"      , help_path    %></li>
-		<li><%= link_to "Sign in"   , '#'          %></li>
-		<li><%= link_to "Sign up"   , signup_path  %></li>
+		<% if signed_in? %>
+			<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+		<% else %>
+		    <li><%= link_to "Sign in"   , signin_path  %></li>
+			<li><%= link_to "Sign up"   , signup_path  %></li>
+		<% end %>
 	</ul>
 </div>
 

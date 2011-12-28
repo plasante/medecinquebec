@@ -7,6 +7,8 @@ Medecinquebec::Application.routes.draw do
   match '/about'  , :to => 'menus#about'
   match '/help'   , :to => 'menus#help'
   match '/signup' , :to => 'users#new'
+  match '/signin' , :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
 root :to => "menus#home"
 

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     if User.count < 50
       if @user.save
         flash[:success] = "Welcome to Medecin Quebec!"
+        sign_in @user
         redirect_to @user
       else
         @title = %(Sign up)
